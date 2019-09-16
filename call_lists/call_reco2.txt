@@ -1,0 +1,16 @@
+-*- mode: grep; default-directory: "~/grasp2018/src/" -*-
+Grep started at Sun Sep 15 08:25:21
+
+grep -n -irl call\ reco2
+appl/rcsfinteract90/el1INT.f90
+appl/rcsfinteract90/el2INT.f90
+appl/rcsfinteract90/el31INT.f90
+appl/rcsfinteract90/el32INT.f90
+appl/rcsfinteract90/onescalar2INT.f90
+lib/librang90/el1.f90
+lib/librang90/el2.f90
+lib/librang90/el31.f90
+lib/librang90/el32.f90
+lib/librang90/onescalar2.f90
+
+Grep finished (matches found) at Sun Sep 15 08:25:22

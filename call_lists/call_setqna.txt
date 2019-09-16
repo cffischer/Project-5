@@ -1,0 +1,11 @@
+-*- mode: grep; default-directory: "~/grasp2018/src/" -*-
+Grep started at Sun Sep 15 08:16:09
+
+grep -n -irl call\ setqna
+appl/rcsfinteract90/Interact_csf.f90
+appl/rcsfinteract90/onescalarINT.f90
+lib/librang90/oneparticlejj.f90
+lib/librang90/onescalar.f90
+lib/librang90/rkco_gg.f90
+
+Grep finished (matches found) at Sun Sep 15 08:16:10
