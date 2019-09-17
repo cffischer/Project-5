@@ -9,23 +9,21 @@ SUBROUTINE SIXJ(I,J,K,L,M,N,ITIK,SI)
 !                                                                  *
 !   This restructured package uses the CONTAINS keyword to group   *
 !   related subroutines together into self-contained blocks,       *
-!   rather than relying on calls to subroutines in separate files. *
-!   The ultimate aim is to reduce the size and complexity of the   *
-!   "librang90" library.                                           *
+!   rather than relying on calls to subroutines in separate files. *                                 *
 !                                                                  *
 !   Written by G. Gaigalas,                                        *
 !   Vanderbilt University,  Nashville               October  1996  *
 !   Transform to fortran 90/95 by G. Gaigalas       December 2012  *
 !   The last modification made by G. Gaigalas       October  2017  *
+!   Restructed by C. Froese Fischer                 May      2019  *
 !   Reststructured by A. Senchuk                    September 2019 *
 !                                                                  *
 !*******************************************************************
-!
 !-----------------------------------------------
 !   M o d u l e s 
 !-----------------------------------------------
   USE vast_kind_param, ONLY: DOUBLE 
-  USE CONS_C,          ONLY: ZERO, ONE
+  USE CONS_C
 !-----------------------------------------------
 !   I n t e r f a c e   B l o c k s
 !-----------------------------------------------
@@ -51,7 +49,7 @@ SUBROUTINE SIXJ(I,J,K,L,M,N,ITIK,SI)
   SI = ZERO 
   IF (ITIK /= 0) THEN 
 !
-!     CHESKED TRIANGULAR CONDITIONS
+!     CHECKED TRIANGULAR CONDITIONS
 !
      IF (IXJTIK(I,J,K,L,M,N) == 0) RETURN  
   ENDIF
@@ -228,12 +226,6 @@ CONTAINS
 !     | J/2  K/2  L/2 |                                            *
 !     | M/2  N/2  1/2 |             [B.M.X. 75]                    *
 !                                                                  *
-!   Written by G. Gaigalas,                                        *
-!   Vilnius,  Lithuania                             March    1995  *
-!   Transform to fortran 90/95 by G. Gaigalas       December 2012  *
-!   The last modification made by G. Gaigalas       October  2017  *
-!   Restructed by C. Froese Fischer                 May      2019  *
-!                                                                  *
 !*******************************************************************
 !
     IMPLICIT NONE
@@ -252,7 +244,7 @@ CONTAINS
     SI = ZERO 
     IF (ITIK /= 0) THEN 
 !
-!     CHESKED TRIANGULAR CONDITIONS
+!     CHECKED TRIANGULAR CONDITIONS
 !
        IF (IXJTIK(J,K,L,M,N,1) == 0) RETURN  
     ENDIF
@@ -295,14 +287,7 @@ CONTAINS
 !     | I/2  J/2  K/2 |                                            *
 !     | L/2  M/2   1  |               [B.M.X.  75].                *
 !                                                                  *
-!   Written by G. Gaigalas,                                        *
-!   Vilnius,  Lithuania                             March    1995  *
-!   Transform to fortran 90/95 by G. Gaigalas       December 2012  *
-!   The last modification made by G. Gaigalas       October  2017  *
-!   Restructed by A. Senchuk                        September 2019 *
-!                                                                  *
-!*******************************************************************
-!
+!******************************************************************* 
     IMPLICIT NONE
 !-----------------------------------------------
 !   D u m m y   A r g u m e n t s
@@ -319,7 +304,7 @@ CONTAINS
     SI = ZERO 
     IF (ITIK /= 0) THEN 
 !
-!     CHESKED TRIANGULAR CONDITIONS
+!     CHECKED TRIANGULAR CONDITIONS
 !
        IF (IXJTIK(I,J,K,L,M,2) == 0) RETURN  
     ENDIF
@@ -386,12 +371,6 @@ CONTAINS
 !     | J/2  K/2  L/2 |                                            *
 !     | M/2  N/2  3/2 |             [B.M.X. 75]                    *
 !                                                                  *
-!   Written by G. Gaigalas,                                        *
-!   Vanderbilt University,  Nashville               October  1996  * 
-!   Transform to fortran 90/95 by G. Gaigalas       December 2012  *
-!   The last modification made by G. Gaigalas       October  2017  *
-!                                                                  *
-!   Restructed by C. Froese Fischer                 May      2019  *
 !*******************************************************************
 !
     IMPLICIT NONE
@@ -410,7 +389,7 @@ CONTAINS
     SI = ZERO 
     IF (ITIK /= 0) THEN 
 !
-!     CHESKED TRIANGULAR CONDITIONS
+!     CHECKED TRIANGULAR CONDITIONS
 !
        IF (IXJTIK(J,K,L,M,N,3) == 0) RETURN  
     ENDIF
@@ -526,12 +505,6 @@ CONTAINS
 !     | J/2  K/2  L/2 |                                            *
 !     | M/2  N/2   2  |             [B.M.X. 75]                    *
 !                                                                  *
-!   Written by G. Gaigalas,                                        *
-!   Vanderbilt University,  Nashville               October  1996  *
-!   Transform to fortran 90/95 by G. Gaigalas       December 2012  *
-!   The last modification made by G. Gaigalas       October  2017  *
-!   Restructed by A. Senchuk                        September 2019 *
-!                                                                  *
 !*******************************************************************
       
     IMPLICIT NONE
@@ -550,7 +523,7 @@ CONTAINS
     SI = ZERO 
     IF (ITIK /= 0) THEN 
 !
-!     CHESKED TRIANGULAR CONDITIONS
+!     CHECKED TRIANGULAR CONDITIONS
 !
        IF (IXJTIK(J,K,L,M,N,4) == 0) RETURN  
     ENDIF
@@ -750,12 +723,6 @@ CONTAINS
 !     | J/2  K/2  L/2 |                                            *
 !     | M/2  N/2   2  |             [B.M.X. 75]                    *
 !                                                                  *
-!   Written by G. Gaigalas,                                        *
-!   Vanderbilt University,  Nashville               October  1996  *
-!   Transform to fortran 90/95 by G. Gaigalas       December 2012  *
-!   The last modification made by G. Gaigalas       October  2017  *
-!   Restructed by A. Senchuk                        September 2019 *
-!                                                                  *
 !*******************************************************************
 
     IMPLICIT NONE
@@ -774,7 +741,7 @@ CONTAINS
     SI = ZERO 
     IF (ITIK /= 0) THEN 
 !
-!     CHESKED TRIANGULAR CONDITIONS
+!     CHECKED TRIANGULAR CONDITIONS
 !
        IF (IXJTIK(J,K,L,M,N,6) == 0) RETURN  
     ENDIF
@@ -1253,12 +1220,6 @@ CONTAINS
 !     | JB/2  JF/2    4  |                                         *
 !                                                                  *
 !                                                                  *
-!   Written by G. Gaigalas,                                        *
-!   Vanderbilt University,  Nashville               October  1996  *
-!   Transform to fortran 90/95 by G. Gaigalas       December 2012  *
-!   The last modification made by G. Gaigalas       October  2017  *
-!   Restructed by A. Senchuk                        September 2019 *
-!                                                                  *
 !*******************************************************************
       
     IMPLICIT NONE
@@ -1276,7 +1237,7 @@ CONTAINS
     SI = ZERO 
     IF (ITIK /= 0) THEN 
 !
-!     CHESKED TRIANGULAR CONDITIONS
+!     CHECKED TRIANGULAR CONDITIONS
 !
        IF (IXJTIK(JC,JE,JD,JB,JF,8) == 0) RETURN  
     ENDIF
